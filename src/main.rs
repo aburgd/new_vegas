@@ -135,15 +135,6 @@ impl Courier {
         String::from(sunset_nuka[rand::thread_rng().gen_range(0, 2)])
     }
 
-    /* pub fn new(special: HashMap<String, i8>, skills: Vec<String>, traits: Vec<String>, sunset_nuka: String) -> Courier {
-        Courier {
-            special: special,
-            skills: skills,
-            traits: traits,
-            sunset_nuka: sunset_nuka,
-        }
-    } */
-
     pub fn new() -> Self {
         Self {
             special: Courier::assign_special(),
