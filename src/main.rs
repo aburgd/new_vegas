@@ -3,8 +3,10 @@ use courier::Courier;
 use std::collections::HashMap;
 
 fn main() {
-    println!("Let's make a Courier.");
+    println!("Mojave Express Courier Application 13-A");
     let player_courier: Courier = Courier::new();
+    let player_name: String = player_courier.name;
+    println!("\nname\n====\n{}", player_name);
     let player_special: HashMap<String, i8> = player_courier.special;
     println!("\nspecial\n=======");
     for attribute in player_special.keys() {
