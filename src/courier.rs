@@ -1,7 +1,11 @@
+use fake::faker::name::raw::*;
+use fake::locales::*;
+use fake::Fake;
 use rand::Rng;
 use std::collections::HashMap;
 
 pub struct Courier {
+    pub name: String,
     pub special: HashMap<String, i8>,
     pub skills: Vec<String>,
     pub traits: Vec<String>,
@@ -112,8 +116,13 @@ impl Courier {
         String::from(sunset_nuka[rand::thread_rng().gen_range(0, 2)])
     }
 
+    fn generate_name() -> String {
+        Name(EN).fake()
+    }
+
     pub fn new() -> Self {
         Self {
+            name: Courier::generate_name(),
             special: Courier::assign_special(),
             skills: Courier::tag_skills(),
             traits: Courier::pick_traits(),
