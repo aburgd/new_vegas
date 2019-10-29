@@ -4,15 +4,22 @@ use fake::Fake;
 use rand::Rng;
 use std::collections::HashMap;
 
+/// A player character is here
 pub struct Courier {
+    /// Couriers must have a name...
     pub name: String,
+    /// a Map of SPECIAL attributes...
     pub special: HashMap<String, i8>,
+    /// an array of skills...
     pub skills: Vec<String>,
+    /// an array of traits...
     pub traits: Vec<String>,
-    pub sunset_nuka: String,
+    /// and last but not last, a preferred soda.
+    pub drink_of_choice: String,
 }
 
 impl Courier {
+    /// A SPECIAL Map has to be made for a new `Courier`.
     fn assign_special() -> HashMap<String, i8> {
         // Declare a HashMap<String, i8> to store player's special
         let mut player_special: HashMap<String, i8> = HashMap::new();
@@ -43,6 +50,10 @@ impl Courier {
         return player_special;
     }
 
+    /// The logic for validating a the SPECIAL Map.
+    /// # Arguments
+    ///
+    /// * `special` - a reference to the SPECIAL `HashMap<>` to be check
     fn check_special(special: &HashMap<String, i8>) -> bool {
         let special_max: i8 = 40;
         let mut special_sum: i8 = 0;
@@ -52,6 +63,7 @@ impl Courier {
         return special_max == special_sum;
     }
 
+    /// Despite what they may think, every `Courier` has a set of skills.
     fn tag_skills() -> Vec<String> {
         let available_skills: [&str; 9] = [
             "energy weapons",
@@ -81,6 +93,7 @@ impl Courier {
         return player_skills;
     }
 
+    /// A `Courier`'s unique almalgamation of attributes lends themself to a unique set of traits.
     fn pick_traits() -> Vec<String> {
         let available_traits: [&str; 10] = [
             "built to destroy",
@@ -111,22 +124,25 @@ impl Courier {
         return player_traits;
     }
 
-    fn sunset_or_nuka() -> String {
-        let sunset_nuka: [&str; 2] = ["sunset sarsparilla", "nuka cola"];
-        String::from(sunset_nuka[rand::thread_rng().gen_range(0, 2)])
+    /// Being a `Courier` is thirsty work. Pick one.
+    fn pick_drink() -> String {
+        let drinks: [&str; 3] = ["sunset sarsparilla", "nuka cola", "alcohol"];
+        String::from(drinks[rand::thread_rng().gen_range(0, drinks.len())])
     }
 
+    /// A `Courier` needs a name. How else can they get their caps?
     fn generate_name() -> String {
         Name(EN).fake()
     }
 
+    /// Returns a new `Courier` for the Mojave Express. No arguments are needed - everything is random.
     pub fn new() -> Self {
         Self {
             name: Courier::generate_name(),
             special: Courier::assign_special(),
             skills: Courier::tag_skills(),
             traits: Courier::pick_traits(),
-            sunset_nuka: Courier::sunset_or_nuka(),
+            drink_of_choice: Courier::pick_drink(),
         }
     }
 }
