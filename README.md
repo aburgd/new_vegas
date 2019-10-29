@@ -14,30 +14,30 @@ Mojave Express Courier Application 13-A
 
 name
 ====
-Benedict Ullrich
+Rosemary McClure
 
 special
 =======
-perception: 7
-luck: 7
-intelligence: 10
-agility: 2
-special: 9
-charisma: 4
+special: 2
 endurance: 1
+charisma: 3
+intelligence: 10
+agility: 9
+perception: 9
+luck: 6
 
 skills
 ======
+explosives
 guns
-speech
 
 traits
 ======
+good natured
+wild wasteland
 built to destroy
-fast shot
-small frame
 
 drink of choice
 ===============
-nuka cola
+alcohol
 ```

@@ -15,7 +15,7 @@ pub struct Courier {
     /// an array of traits...
     pub traits: Vec<String>,
     /// and last but not last, a preferred soda.
-    pub sunset_nuka: String,
+    pub drink_of_choice: String,
 }
 
 impl Courier {
@@ -93,7 +93,7 @@ impl Courier {
         return player_skills;
     }
 
-    /// A `Courier`'s unique almalgamation of attribution
+    /// A `Courier`'s unique almalgamation of attributes lends themself to a unique set of traits.
     fn pick_traits() -> Vec<String> {
         let available_traits: [&str; 10] = [
             "built to destroy",
@@ -124,10 +124,10 @@ impl Courier {
         return player_traits;
     }
 
-    /// TODO: change to drink, add alcohol (spoilers: there's liquor in an RPG)
-    fn sunset_or_nuka() -> String {
-        let sunset_nuka: [&str; 2] = ["sunset sarsparilla", "nuka cola"];
-        String::from(sunset_nuka[rand::thread_rng().gen_range(0, 2)])
+    /// Being a `Courier` is thirsty work. Pick one.
+    fn pick_drink() -> String {
+        let drinks: [&str; 3] = ["sunset sarsparilla", "nuka cola", "alcohol"];
+        String::from(drinks[rand::thread_rng().gen_range(0, drinks.len())])
     }
 
     /// A `Courier` needs a name. How else can they get their caps?
@@ -142,7 +142,7 @@ impl Courier {
             special: Courier::assign_special(),
             skills: Courier::tag_skills(),
             traits: Courier::pick_traits(),
-            sunset_nuka: Courier::sunset_or_nuka(),
+            drink_of_choice: Courier::pick_drink(),
         }
     }
 }
