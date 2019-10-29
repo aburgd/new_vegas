@@ -93,7 +93,7 @@ impl Courier {
         return player_skills;
     }
 
-    /// A `Courier`'s unique almalgamation of attribution
+    /// A `Courier`'s unique almalgamation of attributes lends themself to a unique set of traits.
     fn pick_traits() -> Vec<String> {
         let available_traits: [&str; 10] = [
             "built to destroy",
