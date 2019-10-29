@@ -1,6 +1,6 @@
 [package]
 name = "new_vegas"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Alec Burgdorf <aeburgd@gmail.com>"]
 edition = "2018"
 
