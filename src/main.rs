@@ -22,7 +22,7 @@ fn main() {
     for item in player_traits {
         println!("{}", item);
     }
-    let player_sun_nuka: String = player_courier.sunset_nuka;
+    let player_drink: String = player_courier.drink_of_choice;
     println!("\ndrink of choice\n===============");
-    println!("{}", player_sun_nuka);
+    println!("{}", player_drink);
 }
