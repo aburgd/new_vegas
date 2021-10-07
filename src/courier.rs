@@ -25,7 +25,7 @@ impl Courier {
         let mut player_special: HashMap<String, i8> = HashMap::new();
         // List the keys of SPECIAL as a Vector to iterate over later
         let special_keys: Vec<String> = vec![
-            String::from("special"),
+            String::from("strength"),
             String::from("perception"),
             String::from("endurance"),
             String::from("charisma"),
